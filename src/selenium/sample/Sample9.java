@@ -28,7 +28,7 @@ public class Sample9 {
 
         wait = (WebDriverWait) new WebDriverWait(driver, 10).ignoring(StaleElementReferenceException.class);
 
-        driver.get("https://kristinek.github.io/site/examples/sync");
+        driver.get("https://uljanovs.github.io/site/examples/sync");
 
         System.out.println(driver.findElement(By.id("magic_text")).getText());
         assertEquals("This text magicly changes color", driver.findElement(By.id("magic_text")).getText());
