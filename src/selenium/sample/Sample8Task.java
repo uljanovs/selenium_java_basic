@@ -23,7 +23,7 @@ public class Sample8Task {
         driver = new ChromeDriver();
 
         //open page:
-        driver.get("https://kristinek.github.io/site/examples/po");
+        driver.get("https://uljanovs.github.io/site/examples/po");
     }
 
     // method which is being run after each test
