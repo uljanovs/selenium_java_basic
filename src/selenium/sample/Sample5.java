@@ -24,7 +24,7 @@ public class Sample5 {
         driver = new ChromeDriver();
 
         //open page:
-        driver.get("https://kristinek.github.io/site/examples/alerts_popups");
+        driver.get("https://uljanovs.github.io/site/examples/alerts_popups");
     }
 
     // method which is being run after each test
