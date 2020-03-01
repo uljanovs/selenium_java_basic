@@ -16,7 +16,7 @@ import static org.junit.Assert.*;
 
 public class Sample7Task {
     WebDriver driver;
-    String base_url = "https://kristinek.github.io/site/examples/actions";
+    String base_url = "https://uljanovs.github.io/site/examples/actions";
 
     // method which is being run before each test
     @Before
