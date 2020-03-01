@@ -5,12 +5,12 @@
 ### GIT
 [see wiki for Create-a-branch](https://github.com/uljanovs/selenium_java_basic/wiki/Create-a-branch)
 
-[see wiki for Git-add-commit-pust](https://github.com/KristineK/selenium_java_basic/wiki/Git-add-commit-pust)
+[see wiki for Git-add-commit-pust](https://github.com/uljanovs/selenium_java_basic/wiki/Git-add-commit-push)
 
 ---
 ### Feedback
 
-[Please leave a message, you oppinion is importand to us :)](https://trello.com/invite/b/bel4IMNA/0340db73765032bfae547143b61e58d2/bootcamp)
+[Please leave a message, you oppinion is importand to us :)](https://ideaboardz.com/for/Bootcamp%202020%20-%20Test%20Automation/3054426)
 
 ---
 ### Samples and SampleTask so far...
