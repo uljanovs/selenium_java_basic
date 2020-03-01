@@ -50,8 +50,8 @@
  
 ---
 ### Individual Tasks:
- * [Task1](../master/src/selenium/tasks/Task1.java) - please update the url to https://kristinek.github.io/site/tasks/enter_a_number    
- * [Task2](../master/src/selenium/tasks/Task2.java) - please update the url to https://kristinek.github.io/site/tasks/provide_feedback     
+ * [Task1](../master/src/selenium/tasks/Task1.java) - please update the url to https://uljanovs.github.io/site/tasks/enter_a_number    
+ * [Task2](../master/src/selenium/tasks/Task2.java) - please update the url to https://uljanovs.github.io/site/tasks/provide_feedback     
 ---
 #### Test on locators
 [click here](https://docs.google.com/forms/d/e/1FAIpQLSfVURa4wYHQrKUzXNwg5JeduAfpBuGQkpmMuHIF6Wfd9ivWEQ/viewform?usp=sf_link)
@@ -67,8 +67,8 @@
   * Calendar picker:   
      * [Sample7Task.java](../master/src/selenium/sample/Sample7Task.java) -> `chooseDateViaCalendarBonus()` and `chooseDateViaTextBoxBonus()`
   * Page Object + Page Factory:
-     * [Task3Bonus.java](../master/src/selenium/tasks/Task3Bonus.java) - please update the url to https://kristinek.github.io/site/tasks/list_of_people_with_jobs    
+     * [Task3Bonus.java](../master/src/selenium/tasks/Task3Bonus.java) - please update the url to https://uljanovs.github.io/site/tasks/list_of_people_with_jobs    
 ---
 ### Switching to Cucumber project
-[link to cucumber wiki](https://github.com/KristineK/cucumber_java_basic/wiki/Setup)
+[link to cucumber wiki](https://github.com/uljanovs/cucumber_java_basic/wiki/Setup)
 
