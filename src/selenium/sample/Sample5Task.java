@@ -22,7 +22,7 @@ public class Sample5Task {
         // declaration above:
         driver = new ChromeDriver();
         //open page:
-        driver.get("https://kristinek.github.io/site/examples/alerts_popups");
+        driver.get("https://uljanovs.github.io/site/examples/alerts_popups");
     }
 
     // method which is being run after each test
@@ -46,7 +46,7 @@ public class Sample5Task {
 //        click ok on second alert
         alert2.accept();
 //        verify that the correct page is opened
-        assertEquals("https://kristinek.github.io/site/examples/alerted_page", driver.getCurrentUrl());
+        assertEquals("https://uljanovs.github.io/site/examples/alerted_page", driver.getCurrentUrl());
     }
 
     @Test
