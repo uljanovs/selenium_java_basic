@@ -22,7 +22,7 @@ public class Sample10 {
         System.setProperty("webdriver.chrome.driver", libWithDriversLocation + "chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("https://kristinek.github.io/site/examples/age");
+        driver.get("https://uljanovs.github.io/site/examples/age");
         agePage = PageFactory.initElements(driver, AgeSamplePage.class);
         ageSubmittedPage = PageFactory.initElements(driver, AgeSubmittedSamplePage.class);
     }
