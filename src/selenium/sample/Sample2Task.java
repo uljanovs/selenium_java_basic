@@ -40,17 +40,15 @@ public class Sample2Task {
 
     @Test
     public void findElementByName() throws Exception {
-//         TODO:
+//         TODO: get attribute "id" and "value" of button "This is also a button" using name
 //         get attribute "id" and "value" of button "This is also a button" using name
         System.out.println(driver.findElement(By.name("randomButton2")).getAttribute("id"));
-        System.out.println(driver.findElement(By.name("randomButton2")).getAttribute("value"));
     }
 
     @Test
     public void findElementByClassFirst() throws Exception {
-        System.out.println(driver.findElement(By.className("test")).getText());
-//         TODO:
-//         get first text of class "test" (should be "Test Text 1")
+        System.out.println(driver.findElement(By.className("")).getText());
+//         TODO: get first text of class "test" (should be "Test Text 1")
     }
 
     @Test

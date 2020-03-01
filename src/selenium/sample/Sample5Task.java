@@ -33,18 +33,19 @@ public class Sample5Task {
 
     @Test
     public void goToAlertedPageViaButton() throws Exception {
+        //TODO:
 //        click on "To go to alerted page press Ok. Or stay here" button
         driver.findElement(By.className("w3-blue")).click();
 //        switch to alert
-        Alert alert = driver.switchTo().alert();
+        Alert alert = driver.switchTo()....
 //        click ok
         alert.accept();
 //        switch to second alert
-        Alert alert2 = driver.switchTo().alert();
+        Alert alert2 = driver.switchTo();
 //        verify alert text
-        assertEquals("Booooooooo!", alert2.getText());
+        assertEquals("Booooooooo!", alert2....);
 //        click ok on second alert
-        alert2.accept();
+        alert2....;
 //        verify that the correct page is opened
         assertEquals("https://uljanovs.github.io/site/examples/alerted_page", driver.getCurrentUrl());
     }
@@ -56,7 +57,7 @@ public class Sample5Task {
 //        switch to alert
         Alert alert = driver.switchTo().alert();
 //        click cancel
-        alert.dismiss();
+        alert....;
 //        verify the text on page
         assertEquals("So you desided to say? Good!", driver.findElement(By.id("textForAlerts")).getText());
     }

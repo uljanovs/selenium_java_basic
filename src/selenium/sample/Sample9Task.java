@@ -34,10 +34,11 @@ public class Sample9Task {
 
     @Test
     public void loadGreenSleep() throws Exception {
+        //TODO:
 //         * 1) click on start loading green button
         WebElement startGreen = driver.findElement(By.cssSelector("#start_green"));
         startGreen.click();
-        TimeUnit.MILLISECONDS.sleep(500);
+        TimeUnit.MILLISECONDS.sleep();
 //         * 2) check that button does not appear,
         assertFalse(startGreen.isDisplayed());
 //         * but loading text is seen instead   "Loading green..."
@@ -45,7 +46,7 @@ public class Sample9Task {
         assertTrue(loadingGreen.isDisplayed());
 //         * 3) check that both button
 //         * and loading text is not seen,
-        TimeUnit.MILLISECONDS.sleep(7 * 1000);
+        TimeUnit.MILLISECONDS.sleep(7 * );
         assertFalse(startGreen.isDisplayed());
         assertFalse(loadingGreen.isDisplayed());
 //         * success is seen instead "Green Loaded"
@@ -55,7 +56,7 @@ public class Sample9Task {
 
     @Test
     public void loadGreenImplicit() throws Exception {
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(, TimeUnit.SECONDS);
 //         * 1) click on start loading green button
         WebElement startGreen = driver.findElement(By.cssSelector("#start_green"));
         startGreen.click();
@@ -75,7 +76,7 @@ public class Sample9Task {
 
     @Test
     public void loadGreenExplicitWait() throws Exception {
-        WebDriverWait wait = (WebDriverWait) new WebDriverWait(driver, 10)
+        WebDriverWait wait = (WebDriverWait) new WebDriverWait(driver, )
                 .ignoring(StaleElementReferenceException.class);
 //         * 1) click on start loading green button
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#start_green")));
