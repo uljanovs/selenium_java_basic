@@ -54,7 +54,7 @@
  * [Task2](../master/src/selenium/tasks/Task2.java) - please update the url to https://uljanovs.github.io/site/tasks/provide_feedback     
 ---
 #### Test on locators
-[click here](https://docs.google.com/forms/d/e/1FAIpQLSfVURa4wYHQrKUzXNwg5JeduAfpBuGQkpmMuHIF6Wfd9ivWEQ/viewform?usp=sf_link)
+[click here](https://forms.gle/3wuufDHPpPmu2NDC9)
 
 ---
  ### Bonuses in case of boredom
