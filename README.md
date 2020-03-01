@@ -61,9 +61,7 @@
  * Driver Navigation:
      * [extra1.java](../master/src/selenium/sample/extra/extra1.java)
      * [extra1Task.java](../master/src/selenium/sample/extra/extra1Task.java)
- * Using different browsers:
-     * [extra2.java](../master/src/selenium/sample/extra2.java)
-     * [extra2Task.java](../master/src/selenium/sample/extra2Task.java)
+
   * Calendar picker:   
      * [Sample7Task.java](../master/src/selenium/sample/Sample7Task.java) -> `chooseDateViaCalendarBonus()` and `chooseDateViaTextBoxBonus()`
   * Page Object + Page Factory:
