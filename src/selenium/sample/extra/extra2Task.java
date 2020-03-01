@@ -22,7 +22,7 @@ public class extra2Task {
         System.setProperty("webdriver.gecko.driver", libWithDriversLocation + "geckodriver.exe");
         driver = new FirefoxDriver();
 //        TODO
-//        go to page https://kristinek.github.io/site/examples/po
+//        go to page https://uljanovs.github.io/site/examples/po
 //        check the background color of h1 element
     }
 
@@ -31,7 +31,7 @@ public class extra2Task {
         System.setProperty("webdriver.chrome.driver", libWithDriversLocation + "chromedriver.exe");
         driver = new ChromeDriver();
 //        TODO
-//        go to page https://kristinek.github.io/site/examples/po
+//        go to page https://uljanovs.github.io/site/examples/po
 //        check the background color of h1 element
     }
 
@@ -40,7 +40,7 @@ public class extra2Task {
         System.setProperty("webdriver.ie.driver", libWithDriversLocation + "IEDriverServer.exe");
         driver = new InternetExplorerDriver();
 //        TODO
-//        go to page https://kristinek.github.io/site/examples/po
+//        go to page https://uljanovs.github.io/site/examples/po
 //        check the background color of h1 element
     }
 }

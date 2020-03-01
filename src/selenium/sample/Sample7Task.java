@@ -107,14 +107,14 @@ public class Sample7Task {
     public void chooseDateViaCalendarBonus() throws Exception {
         driver.findElement(By.xpath("//input[@id='vfb-8']")).click();
         Thread.sleep(1000);
-//        enter date '4 of July 2007' using calendar widget
-        for(int i = 0; i < 141; i++) {
-            driver.findElement(By.xpath("//*[contains(@class, 'ui-datepicker-prev')]")).click();
+//TODO:        enter date '4 of July 2007' using calendar widget
+        for (int i = 0; i < 141; i++) {
+            //...click();
             Thread.sleep(60);
         }
-        driver.findElement(By.xpath("//a[text()='4']")).click();
+        //.click();
         Thread.sleep(1000);
-        driver.findElement(By.xpath("//button[@id='result_button_date']")).click();
+        //.click();
 //        check that correct date is added
         String result = driver.findElement(By.xpath("//p[@id='result_date']")).getText();
         assertEquals("You entered date: 07/04/2007", result);
@@ -124,13 +124,9 @@ public class Sample7Task {
     public void chooseDateViaTextBoxBonus() throws Exception {
         WebElement field = driver.findElement(By.cssSelector("#vfb-8"));
         field.clear();
-//        enter date '2 of May 1959' using text
-        field.sendKeys("05/02/1959");
-        field.sendKeys(Keys.ENTER);
-        Thread.sleep(1000);
-        driver.findElement(By.cssSelector("#result_button_date")).click();
-//        check that correct date is added
-        String resultText = driver.findElement(By.cssSelector("#result_date")).getText();
-        assertEquals("You entered date: 05/02/1959", resultText);
+// TODO:       enter date '2 of May 1959' using text
+
+//    TODO:    check that correct date is added
+
     }
 }
