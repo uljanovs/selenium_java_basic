@@ -31,7 +31,7 @@ public class Task1 {
 //        TODO
 //        enter a text instead of a number, check that correct error is seen
         driver.findElement(By.id("numb")).sendKeys("qwerty");
-        driver.findElement(By.className("w3-input w3-border w3-light-grey required")).click();
+        driver.findElement(By.className("w3-btn w3-orange w3-margin")).click();
         //        check that error message appearing
         assertEquals("Please enter a number", driver.findElement(By.id("ch1_error")).getText());
     }
@@ -40,7 +40,7 @@ public class Task1 {
     public void errorOnNumberTooSmall() {
 //        TODO
         driver.findElement(By.id("numb")).sendKeys("47");
-        driver.findElement(By.className("w3-orange")).click();
+        driver.findElement(By.className("w3-btn w3-orange w3-margin")).click();
 //        enter number which is too small (below 50), check that correct error is seen
         assertEquals("Number is too small", driver.findElement(By.id("ch1_error")).getText());
     }
@@ -50,12 +50,12 @@ public class Task1 {
 
 //        BUG: if I enter number 666 no errors where seen
         driver.findElement(By.id("numb")).sendKeys("666");
-        driver.findElement(By.className("w3-orange")).click();
+        driver.findElement(By.className("w3-btn w3-orange w3-margin")).click();
         assertEquals("Number is too big",driver.findElement(By.id("ch1_error")).getText());
 //        TODO
 //        enter number which is too big (above 100), check that correct error is seen
         driver.findElement(By.id("numb")).sendKeys("101");
-        driver.findElement(By.className("w3-orange")).click();
+        driver.findElement(By.className("w3-btn w3-orange w3-margin")).click();
         assertEquals("Number is too big", driver.findElement(By.id("ch1_error")).getText());
 
     }
@@ -66,7 +66,7 @@ public class Task1 {
 //        enter a number between 50 and 100 digit in the input (square root of which doesn't have a remainder, e.g. 2 is square root of 4),
 //        then and press submit and check that correct no error is seen and check that square root is calculated correctly
         driver.findElement(By.id("numb")).sendKeys("64");
-        driver.findElement(By.className("w3-orange")).click();
+        driver.findElement(By.className("w3-btn w3-orange w3-margin")).click();
         assertEquals("Square root of 64 is 8.00", driver.findElement(By.id("numb")).getText());
 
 
@@ -78,7 +78,7 @@ public class Task1 {
 //        enter a number between 50 and 100 digit in the input (square root of which doesn't have a remainder, e.g. 1.732.. is square root of 3) and press submit,
 //        then check that correct no error is seen and check that square root is calculated correctly
         driver.findElement(By.id("numb")).sendKeys("66");
-        driver.findElement(By.className("w3-orange")).click();
+        driver.findElement(By.className("w3-btn w3-orange w3-margin")).click();
         assertEquals("Square root of 66 is 8.12", driver.findElement(By.id("numb")).getText());
     }
 }
