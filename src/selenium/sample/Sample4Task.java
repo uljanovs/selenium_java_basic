@@ -36,24 +36,24 @@ public class Sample4Task {
     public void enterNumber() throws Exception {
         //TODO:
 //        enter a number under "Number"
-      //  driver.findElement(By.id("number"))....("123");
+       driver.findElement(By.id("number")).sendKeys("123");
 //        check that button is not clickable "Clear Result"
-  //      assertFalse(driver.findElement(By.id("clear_result_button_number"))....());
+            assertFalse(driver.findElement(By.id("clear_result_button_number")).click();
 //        check that text is not displayed
- //       assertFalse(driver.findElement(By.id("result_number"))....());
+            assertFalse(driver.findElement(By.id("result_number")).isDisplayed());
 //        click on "Result" button
-  //      driver.findElement(By.id("result_button_number")).....();
+            driver.findElement(By.id("result_button_number")).click();
 //        check that text is displayed
- //       assertTrue(driver.findElement(By.id("result_number")).....());
+        assertTrue(driver.findElement(By.id("result_number")).isDisplayed());
 //        check that the correct Text appears ("You entered number: "NUMBER YOU ENTERED"")
- //       assertEquals("You entered number: \"1235\"", driver.findElement(By.id("result_number"))....());
+        assertEquals("You entered number: \"1235\"", driver.findElement(By.id("result_number")).isDisplayed());
 //        check that the button "Clear Result" is clickable now
-  //      assertTrue(driver.findElement(By.id("clear_result_button_number"))....());
+         assertTrue(driver.findElement(By.id("clear_result_button_number")).click();
 //        click on "Clear Result"
- //       driver.findElement(By.id("clear_result_button_number")).....();
+         driver.findElement(By.id("clear_result_button_number")).click();
 //        check that the text is still (""), but it is not displayed
-  //      assertEquals("", driver.findElement(By.id("result_number"))....());
-  //      assertFalse(driver.findElement(By.id("result_number"))....());
+       assertEquals("", driver.findElement(By.id("result_number")).isDisplayed());
+       assertFalse(driver.findElement(By.id("result_number")).isDisplayed());
     }
 
     @Test
