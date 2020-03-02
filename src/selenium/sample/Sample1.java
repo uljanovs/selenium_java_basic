@@ -15,7 +15,7 @@ public class Sample1 {
         System.setProperty("webdriver.chrome.driver", libWithDriversLocation + "chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
-        //open test homepage
+        //open test homepage h1
         driver.get("https://google.com");
         driver.get("https://uljanovs.github.io/site/");
         System.out.println(driver.findElement(By.id("h1")).getText());
