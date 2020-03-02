@@ -17,7 +17,6 @@ public class Task1 {
         driver = new ChromeDriver();
         driver.get("https://uljanovs.github.io/site/tasks/enter_a_number");
     }
-
     @After
     public void closeBrowser() {
         driver.quit();
@@ -26,7 +25,7 @@ public class Task1 {
     @Test
     public void errorOnText() {
 //        TODO
-//        enter a text instead of a number, check that correct error is seen
+//        enter a text instead of a number, check that correct error is seengfgfgfg
     }
 
     @Test
