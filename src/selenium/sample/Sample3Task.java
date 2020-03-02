@@ -37,7 +37,10 @@ public class Sample3Task {
     @Test
     public void assertEqualsTask() throws Exception {
 //TODO         check how many element with class "test" there are on page (5)
-  //      .....(5, driver.findElements(By.className("test")).size());
+        String expected = "Heading 2";
+        String actual = driver.findElement(By.id("heading_2")).getText();
+        assertEquals(expected, actual);
+  //      assertEquals(5, driver.findElements(By.className("test")).size());
 //         check that value of second button is "This is also a button"
         assertEquals("This is also a button", driver.findElement(By.id("buttonId")).getAttribute("value"));
     }
@@ -53,7 +56,7 @@ public class Sample3Task {
     @Test
     public void assertFalseTask() throws Exception {
 //  TODO:      check that it is False that value of second button is "This is a button"
-    //    ....(driver.findElement(By.name("randomButton2")).getAttribute("value").equals("This is a button"));
+        assertFalse(driver.findElement(By.name("randomButton2")).getAttribute("value").equals("This is a button"));
     }
 
     @Test
@@ -62,7 +65,7 @@ public class Sample3Task {
         List<WebElement> elements = driver.findElements(By.className(""));
         //TODO:        contain number 190
         for (WebElement element : elements) {
-        //    assertFalse(element.getText().);
+          //  assertFalse(element.getText().get(190);
         }
     }
 }

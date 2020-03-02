@@ -33,26 +33,31 @@ public class Sample4Task {
     }
 
     @Test
-    public void enterNumber() throws Exception {
+    public void enterNumber(int i) throws Exception {
         //TODO:
-//        enter a number under "Number"
-      //  driver.findElement(By.id("number"))....("123");
+        //        enter a number under "Number"
+        enterNumber(5);
+
+        WebElement number = driver.findElement(By.id("number"));
+        //        enter a number under "Number"
+        Object charSequence;
+      //  driver.findElement(By.id("number")).sendKeys(charSequence."123");
 //        check that button is not clickable "Clear Result"
-  //      assertFalse(driver.findElement(By.id("clear_result_button_number"))....());
+          assertFalse(driver.findElement(By.id("clear_result_button_number")).isEnabled());
 //        check that text is not displayed
  //       assertFalse(driver.findElement(By.id("result_number"))....());
 //        click on "Result" button
-  //      driver.findElement(By.id("result_button_number")).....();
+          driver.findElement(By.id("result_button_number")).click();
 //        check that text is displayed
- //       assertTrue(driver.findElement(By.id("result_number")).....());
+          assertTrue(driver.findElement(By.id("result_number")).isDisplayed());
 //        check that the correct Text appears ("You entered number: "NUMBER YOU ENTERED"")
- //       assertEquals("You entered number: \"1235\"", driver.findElement(By.id("result_number"))....());
+          assertEquals("You entered number: \"1235\"", driver.findElement(By.id("result_number")).getText());
 //        check that the button "Clear Result" is clickable now
   //      assertTrue(driver.findElement(By.id("clear_result_button_number"))....());
 //        click on "Clear Result"
  //       driver.findElement(By.id("clear_result_button_number")).....();
 //        check that the text is still (""), but it is not displayed
-  //      assertEquals("", driver.findElement(By.id("result_number"))....());
+          assertEquals("", driver.findElement(By.id("result_number")).getText());
   //      assertFalse(driver.findElement(By.id("result_number"))....());
     }
 
@@ -64,8 +69,8 @@ public class Sample4Task {
 //        click on "This is a link to Homepage"
  //       driver.findElement(By.id("homepage_link")).;
 //        check that current url is not base_url
-  //      assertFalse(base_url.equals(driver.()));
+         assertFalse(base_url.equals(driver.getCurrentUrl()));
 //        verify that current url is homepage
-  //      assertTrue(driver.get.....equals("https://uljanovs.github.io/site/"));
+          assertTrue(driver.getCurrentUrl().equals("https://uljanovs.github.io/site/"));
     }
 }
