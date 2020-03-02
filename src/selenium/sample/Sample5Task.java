@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 
 public class Sample5Task {
@@ -59,6 +60,6 @@ public class Sample5Task {
 //        click cancel
         alert.dismiss();
 //        verify the text on page
-        assertEquals("So you decided to say? Good!", driver.findElement(By.id("textForAlerts")).getText());
+        assertEquals("So you desided to say? Good!", driver.findElement(By.id("textForAlerts")).getText());
     }
 }
