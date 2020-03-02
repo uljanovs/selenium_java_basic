@@ -38,7 +38,7 @@ public class Sample9Task {
 //         * 1) click on start loading green button
         WebElement startGreen = driver.findElement(By.cssSelector("#start_green"));
         startGreen.click();
-        TimeUnit.MILLISECONDS.sleep();
+ //       TimeUnit.MILLISECONDS.sleep();
 //         * 2) check that button does not appear,
         assertFalse(startGreen.isDisplayed());
 //         * but loading text is seen instead   "Loading green..."
@@ -46,7 +46,7 @@ public class Sample9Task {
         assertTrue(loadingGreen.isDisplayed());
 //         * 3) check that both button
 //         * and loading text is not seen,
-        TimeUnit.MILLISECONDS.sleep(7 * );
+ //       TimeUnit.MILLISECONDS.sleep(7 * );
         assertFalse(startGreen.isDisplayed());
         assertFalse(loadingGreen.isDisplayed());
 //         * success is seen instead "Green Loaded"
@@ -56,7 +56,7 @@ public class Sample9Task {
 
     @Test
     public void loadGreenImplicit() throws Exception {
-        driver.manage().timeouts().implicitlyWait(, TimeUnit.SECONDS);
+//        driver.manage().timeouts().implicitlyWait(, TimeUnit.SECONDS);
 //         * 1) click on start loading green button
         WebElement startGreen = driver.findElement(By.cssSelector("#start_green"));
         startGreen.click();
@@ -76,22 +76,22 @@ public class Sample9Task {
 
     @Test
     public void loadGreenExplicitWait() throws Exception {
-        WebDriverWait wait = (WebDriverWait) new WebDriverWait(driver, )
-                .ignoring(StaleElementReferenceException.class);
+     //   WebDriverWait wait = (WebDriverWait) new WebDriverWait(driver, )
+     //           .ignoring(StaleElementReferenceException.class);
 //         * 1) click on start loading green button
-        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#start_green")));
+  //      wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#start_green")));
         WebElement startGreen = driver.findElement(By.cssSelector("#start_green"));
         startGreen.click();
 //         * 2) check that button does not appear,
 //         * but loading text is seen instead   "Loading green..."
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#loading_green")));
+//        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#loading_green")));
         WebElement loadingGreen = driver.findElement(By.cssSelector("#loading_green"));
         assertTrue(loadingGreen.isDisplayed());
         assertFalse(startGreen.isDisplayed());
 //         * 3) check that both button
 //         * and loading text is not seen,
 //         * success is seen instead "Green Loaded"
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#finish_green")));
+//        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#finish_green")));
         WebElement finishGreen = driver.findElement(By.cssSelector("#finish_green"));
         assertTrue(finishGreen.isDisplayed());
         assertFalse(startGreen.isDisplayed());
