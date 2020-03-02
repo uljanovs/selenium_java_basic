@@ -12,8 +12,6 @@ public class Sample1Task {
 //         define driver
         System.setProperty("webdriver.chrome.driver", libWithDriversLocation + "chromedriver.exe");
         WebDriver browser = new ChromeDriver();
-
-//       TODO:  go to https://uljanovs.github.io/site/index2.html
         browser.get("https://uljanovs.github.io/site/index2.html");
 
 //         get title of page
