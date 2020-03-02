@@ -13,7 +13,7 @@ public class Sample1Task {
         System.setProperty("webdriver.chrome.driver", libWithDriversLocation + "chromedriver.exe");
         WebDriver browser = new ChromeDriver();
 
-//       TODO:  go to https://uljanovs.github.io/site/index2.htmlddd
+//       TODO:  go to https://uljanovs.github.io/site/index2.htmldddd
         browser.get("https://uljanovs.github.io/site/index2.html");
 
 //         get title of page
