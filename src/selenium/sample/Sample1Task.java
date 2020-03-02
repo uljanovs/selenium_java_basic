@@ -14,7 +14,9 @@ public class Sample1Task {
         WebDriver browser = new ChromeDriver();
 
 //       TODO:  go to https://uljanovs.github.io/site/index2.html
-        browser.get("");
+        //-//
+        browser.get("https://uljanovs.github.io/site/index2.html");
+        //-//
 
 //         get title of page
         System.out.println(browser.getTitle());
