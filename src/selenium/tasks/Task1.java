@@ -65,6 +65,7 @@ public class Task1 {
         driver.findElement(By.className("w3-orange")).click();
         Alert alert = driver.switchTo().alert();
         assertEquals("Square root of 64 is 8.00", alert.getText());
+        alert.accept();
     }
 
     @Test
@@ -76,5 +77,6 @@ public class Task1 {
         driver.findElement(By.className("w3-orange")).click();
         Alert alert = driver.switchTo().alert();
         assertEquals("Square root of 99 is 9.95", alert.getText());
+        alert.accept();
     }
 }
