@@ -40,6 +40,7 @@ public class Sample2 {
         // no such element:
         // Unable to locate element: {"method":"id","selector":"headingasdga"}
 //        System.out.println(driver.findElement(By.id("headingasdga")).getText());
+        System.out.println (driver.findElement(By.cssSelector("div#heading_1 > h2")));
     }
 
     @Test
