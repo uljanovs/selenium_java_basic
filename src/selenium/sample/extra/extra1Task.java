@@ -43,7 +43,7 @@ public class extra1Task {
 //        check that the page now is "https://uljanovs.github.io/site/examples/po"
 
         driver.get("https://uljanovs.github.io/site/examples/po");
-        driver.findElement(By.linkText("po1")).click();
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/p[2]/a")).click();
         assertEquals("https://uljanovs.github.io/site/examples/po1", driver.getCurrentUrl());
         driver.navigate().back();
         assertEquals("https://uljanovs.github.io/site/examples/po", driver.getCurrentUrl());
@@ -61,7 +61,7 @@ public class extra1Task {
 //        check that the page now is "https://uljanovs.github.io/site/examples/po1"
 
         driver.get("https://uljanovs.github.io/site/examples/po");
-        driver.findElement(By.linkText("po1")).click();
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/p[2]/a")).click();
         driver.navigate().back();
         driver.navigate().forward();
         assertEquals("https://uljanovs.github.io/site/examples/po1", driver.getCurrentUrl());
