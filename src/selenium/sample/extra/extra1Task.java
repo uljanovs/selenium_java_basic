@@ -1,10 +1,14 @@
 package selenium.sample.extra;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import static org.junit.Assert.*;
 
 public class extra1Task {
     WebDriver driver;
@@ -33,6 +37,14 @@ public class extra1Task {
     @Test
     public void navigateBack() throws Exception {
 //        TODO
+        driver.get("https://uljanovs.github.io/site/examples/po");
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/p[2]/a")).click();
+        assertEquals("https://uljanovs.github.io/site/examples/po1",
+                driver.getCurrentUrl());
+        driver.navigate().back();
+        assertEquals("https://uljanovs.github.io/site/examples/po",
+                driver.getCurrentUrl());
+
 //        open page with url "https://uljanovs.github.io/site/examples/po"
 //        click "More > " for the top left element
 //        check that the url now "https://uljanovs.github.io/site/examples/po1"
@@ -43,6 +55,15 @@ public class extra1Task {
     @Test
     public void navigateForward() throws Exception {
 //        TODO
+        driver.get("https://uljanovs.github.io/site/examples/po");
+        driver.findElement(By.xpath("/html/body/div[3]/div[1]/div/div/p[2]/a")).click();
+        driver.navigate().back();
+        assertEquals("https://uljanovs.github.io/site/examples/po",
+                driver.getCurrentUrl());
+        driver.navigate().forward();
+        assertEquals("https://uljanovs.github.io/site/examples/po1",
+                driver.getCurrentUrl());
+
 //        open page with url "https://uljanovs.github.io/site/examples/po"
 //        click "More > " for the top left element
 //        using driver navigation go back to "https://uljanovs.github.io/site/examples/po"
@@ -53,7 +74,12 @@ public class extra1Task {
     @Test
     public void refresh() throws Exception {
 //        TODO
-//        open page "https://uljanovs.github.io/site/examples/act"
+        driver.get("https://uljanovs.github.io/site/examples/act");
+        driver.findElement(By.xpath("//*[@id=\"show_text\"]")).click();
+        assertEquals("I am here!", driver.findElement(By.id("show_me")).getText());
+        driver.navigate().refresh();
+        assertEquals("", driver.findElement(By.id("show_me")).getText());
+
 //        click on "Show" button in 'Button' section
 //        check that text "I am here!" is seen
 //        refresh page
