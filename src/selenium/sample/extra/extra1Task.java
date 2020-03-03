@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 public class extra1Task {
     WebDriver driver;
@@ -71,11 +72,12 @@ public class extra1Task {
 //        click on "Show" button in 'Button' section
         driver.findElement(By.id("show_text")).click();
 //        check that text "I am here!" is seen
-        assertEquals(driver.findElement(By.id("show_me")).getText(),"I am here!");
+        assertEquals("I'm here!", driver.findElement(By.id("show_me")).getText();
 //        refresh page
         driver.navigate().refresh();
 //        check that text "I am here!" is not seen
-        assertEquals(driver.findElement(By.id("show_me")).getText(),"");
+       // assertEquals(driver.findElement(By.id("show_me")).getText(),"");
+         assertFalse(driver.findElement(By.id("show_me")).isDisplayed());
 
     }
 }
