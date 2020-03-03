@@ -2,10 +2,13 @@ package selenium.sample.extra;
 
 import org.junit.After;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+
+import static org.junit.Assert.assertEquals;
 
 
 public class extra2Task {
@@ -23,7 +26,10 @@ public class extra2Task {
         driver = new FirefoxDriver();
 //        TODO
 //        go to page https://uljanovs.github.io/site/examples/po
+        driver.get("https://uljanovs.github.io/site/examples/po");
 //        check the background color of h1 element
+        assertEquals("64px", driver.findElement(By.cssSelector("h1")).getCssValue("font-size"));
+
     }
 
     @Test
@@ -32,7 +38,10 @@ public class extra2Task {
         driver = new ChromeDriver();
 //        TODO
 //        go to page https://uljanovs.github.io/site/examples/po
+        driver.get("https://uljanovs.github.io/site/examples/po");
 //        check the background color of h1 element
+        assertEquals("rgba(0, 0, 0, 0)",
+                driver.findElement(By.cssSelector("h1")).getCssValue("background-color"));
     }
 
     @Test
@@ -41,6 +50,9 @@ public class extra2Task {
         driver = new InternetExplorerDriver();
 //        TODO
 //        go to page https://uljanovs.github.io/site/examples/po
+        driver.get("https://uljanovs.github.io/site/examples/po");
 //        check the background color of h1 element
+        assertEquals("transparent",
+                driver.findElement(By.cssSelector("h1")).getCssValue("background-color"));
     }
 }
