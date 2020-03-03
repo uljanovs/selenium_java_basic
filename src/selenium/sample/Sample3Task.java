@@ -37,10 +37,11 @@ public class Sample3Task {
     @Test
     public void assertEqualsTask() throws Exception {
 //TODO         check how many element with class "test" there are on page (5)
-        String expected = "Heading 2";
-        String actual = driver.findElement(By.id("heading_2")).getText();
-        assertEquals(expected, actual);
-  //      assertEquals(5, driver.findElements(By.className("test")).size());
+        //      assertEquals(5, driver.findElements(By.className("test")).size());
+        int actualNumberOfElements = driver.findElements(By.className("name")).size();
+        int expectedNumberOfElements = 5;
+        assertEquals(expectedNumberOfElements, actualNumberOfElements);
+
 //         check that value of second button is "This is also a button"
         assertEquals("This is also a button", driver.findElement(By.id("buttonId")).getAttribute("value"));
     }
@@ -50,8 +51,8 @@ public class Sample3Task {
 // TODO:        check that it is True that value of second button is
 //         "this is Also a Button" if you ignore Caps Locks
 //         fail with custom error message:
-    //    .....("Custom message", driver.findElement(By.name("randomButton2")).getAttribute("value").equalsIgnoreCase("this is Also a Button"));
-    }
+     assertTrue("Custom message", driver.findElement(By.name("randomButton2")).getAttribute("value").equalsIgnoreCase("this is Also a Button"));
+  }
 
     @Test
     public void assertFalseTask() throws Exception {
@@ -62,10 +63,11 @@ public class Sample3Task {
     @Test
     public void failTask() throws Exception {
         //TODO:   check that none of items with class "test"
-        List<WebElement> elements = driver.findElements(By.className(""));
+        List<WebElement> elements = driver.findElements(By.class("test"));
         //TODO:        contain number 190
         for (WebElement element : elements) {
-          //  assertFalse(element.getText().get(190);
+          assertFalse(driver.findElement(By.class("test").equals(190)));
         }
     }
 }
+
