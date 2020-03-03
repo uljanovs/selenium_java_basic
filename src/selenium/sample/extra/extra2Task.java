@@ -18,19 +18,14 @@ public class extra2Task {
     private String color;
 
 
-    public void checkFontWeight() {
+    public void checks(String color, String bgc) {
         assertEquals("400",
                 driver.findElement(By.className("w3-jumbo")).getCssValue("font-weight"));
-    }
-    public void checkColor(String color) {
         assertEquals(color,
                 driver.findElement(By.className("w3-jumbo")).getCssValue("color"));
-        }
-    public void checkBGColor(String bgc) {
         assertEquals(bgc,
                 driver.findElement(By.className("w3-jumbo")).getCssValue("background-color"));
     }
-
 
     @After
     public void endingTests() throws Exception {
@@ -45,10 +40,7 @@ public class extra2Task {
 //        go to page https://uljanovs.github.io/site/examples/po
         driver.get("https://uljanovs.github.io/site/examples/po");
 //        check the background color of h1 element
-        checkFontWeight();
-
-        checkColor("rgb(0, 0, 0)");
-        checkBGColor("rgba(0, 0, 0, 0)");
+        checks("rgb(0, 0, 0)", "rgba(0, 0, 0, 0)");
     }
 
     @Test
@@ -59,9 +51,7 @@ public class extra2Task {
 //        go to page https://uljanovs.github.io/site/examples/po
         driver.get("https://uljanovs.github.io/site/examples/po");
 //        check the background color of h1 element
-        checkFontWeight();
-        checkColor("rgba(0, 0, 0, 1)");
-        checkBGColor("rgba(0, 0, 0, 0)");
+        checks("rgba(0, 0, 0, 1)", "rgba(0, 0, 0, 0)");
 
     }
 
@@ -73,8 +63,6 @@ public class extra2Task {
 //        go to page https://uljanovs.github.io/site/examples/po
         driver.get("https://uljanovs.github.io/site/examples/po");
 //        check the background color of h1 element
-        checkFontWeight();
-        checkColor("rgba(0, 0, 0, 1)");
-        checkBGColor("transparent");
+        checks("rgba(0, 0, 0, 1)", "transparent");
     }
 }
