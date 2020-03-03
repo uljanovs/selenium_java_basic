@@ -21,6 +21,8 @@ public class Sample1Task {
 //         get URL of current page
         System.out.println(browser.getCurrentUrl());
 
+
+
 //         close browser
         browser.quit();
     }
