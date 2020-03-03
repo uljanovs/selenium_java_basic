@@ -2,10 +2,15 @@ package selenium.sample.extra;
 
 import org.junit.After;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.Color;
+
+import static org.junit.Assert.*;
 
 
 public class extra2Task {
@@ -17,13 +22,20 @@ public class extra2Task {
         driver.quit();
     }
 
+
+
     @Test
     public void runningOnFirefox() throws Exception {
         System.setProperty("webdriver.gecko.driver", libWithDriversLocation + "geckodriver.exe");
         driver = new FirefoxDriver();
+
+
 //        TODO
 //        go to page https://uljanovs.github.io/site/examples/po
-//        check the background color of h1 element
+        driver.get("https://uljanovs.github.io/site/examples/po");
+//        check the font size of h1 element
+        assertEquals("64px",
+                driver.findElement(By.xpath("/html/body/div[2]/h1")).getCssValue("font-size"));
     }
 
     @Test
@@ -32,7 +44,10 @@ public class extra2Task {
         driver = new ChromeDriver();
 //        TODO
 //        go to page https://uljanovs.github.io/site/examples/po
+        driver.get("https://uljanovs.github.io/site/examples/po");
 //        check the background color of h1 element
+        assertEquals("64px",
+                driver.findElement(By.xpath("/html/body/div[2]/h1")).getCssValue("font-size"));
     }
 
     @Test
@@ -41,6 +56,11 @@ public class extra2Task {
         driver = new InternetExplorerDriver();
 //        TODO
 //        go to page https://uljanovs.github.io/site/examples/po
+        driver.get("https://uljanovs.github.io/site/examples/po");
 //        check the background color of h1 element
+        assertEquals("64px",
+                driver.findElement(By.xpath("/html/body/div[2]/h1")).getCssValue("font-size"));
     }
+
+
 }
