@@ -39,8 +39,16 @@ public class Sample8Task {
                 driver.findElement(By.cssSelector(".w3-pale-red")).getCssValue("background-color"));
         assertEquals("rgba(255, 255, 204, 1)",
                 driver.findElement(By.cssSelector(".w3-pale-yellow")).getCssValue("background-color"));
+        assertEquals("rgba(221, 255, 255, 1)",
+                driver.findElement(By.cssSelector(".w3-pale-blue")).getCssValue("background-color"));
 //        check h1 element font-size 64px
         assertEquals("64px",
                 driver.findElement(By.cssSelector("h1")).getCssValue("font-size"));
+
+        assertEquals("30px",
+                driver.findElement(By.cssSelector("h2")).getCssValue("font-size"));
+
+        assertEquals("15px",
+                driver.findElement(By.cssSelector(".w3-row-padding")).getCssValue("font-size"));
     }
 }
