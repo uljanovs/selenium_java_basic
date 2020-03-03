@@ -42,5 +42,12 @@ public class Sample8Task {
 //        check h1 element font-size 64px
         assertEquals("64px",
                 driver.findElement(By.cssSelector("h1")).getCssValue("font-size"));
+        //check the background of "blue" sections
+        assertEquals("rgba(221, 255, 255, 1)",
+                driver.findElement(By.cssSelector(".w3-pale-blue")).getCssValue("background-color"));
+        //        check "blue box" element font-size 64px
+        assertEquals("15px",
+                driver.findElement(By.cssSelector(".w3-pale-blue")).getCssValue("font-size"));
+
     }
 }
