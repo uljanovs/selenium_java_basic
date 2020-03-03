@@ -36,23 +36,27 @@ public class Sample4Task {
     public void enterNumber(int i) throws Exception {
         //TODO:
         //        enter a number under "Number"
-        enterNumber(5);
-
-        WebElement number = driver.findElement(By.id("number"));
         //        enter a number under "Number"
+        enterNumber(5);
         Object charSequence;
       //  driver.findElement(By.id("number")).sendKeys(charSequence."123");
+        WebElement number = driver.findElement(By.id("number")).sendKeys(charSequence."123");
 //        check that button is not clickable "Clear Result"
-          assertFalse(driver.findElement(By.id("clear_result_button_number")).isEnabled());
+          number.clear();
+
 //        check that text is not displayed
- //       assertFalse(driver.findElement(By.id("result_number"))....());
+          assertEquals(driver.findElement( By.id( "number"); // checking that value is empty or ""
+ //       assertFalse(driver.findElement(By.id("number"))....());
+          assertFalse(driver.findElement(By.id("clear_result_button_number")).isEnabled());
 //        click on "Result" button
-          driver.findElement(By.id("result_button_number")).click();
+          number.click();
+          assertEquals(driver.findElement(By.id("result_button_number")).click();
 //        check that text is displayed
           assertTrue(driver.findElement(By.id("result_number")).isDisplayed());
 //        check that the correct Text appears ("You entered number: "NUMBER YOU ENTERED"")
           assertEquals("You entered number: \"1235\"", driver.findElement(By.id("result_number")).getText());
 //        check that the button "Clear Result" is clickable now
+
   //      assertTrue(driver.findElement(By.id("clear_result_button_number"))....());
 //        click on "Clear Result"
  //       driver.findElement(By.id("clear_result_button_number")).....();
