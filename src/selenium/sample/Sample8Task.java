@@ -43,9 +43,9 @@ public class Sample8Task {
 //        check h1 element font-size 64px
         assertEquals("64px",
                 driver.findElement(By.cssSelector("h1")).getCssValue("font-size"));
-        assertEquals("30px",driver.findElement(By.cssSelector("h2")).getCssValue("font-size"));
-        assertEquals("\"Segoe UI\", Arial, sans-serif",driver.findElement(By.cssSelector("h2")).getCssValue("font-family"));
-        assertEquals("15px",driver.findElement(By.cssSelector("p")).getCssValue("font-size"));
+        assertEquals("30px", driver.findElement(By.cssSelector("h2")).getCssValue("font-size"));
+        assertEquals("\"Segoe UI\", Arial, sans-serif", driver.findElement(By.cssSelector("h2")).getCssValue("font-family"));
+        assertEquals("15px", driver.findElement(By.cssSelector("p")).getCssValue("font-size"));
 
     }
 }
