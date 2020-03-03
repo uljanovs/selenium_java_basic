@@ -72,7 +72,8 @@ public class extra1Task {
 //        click on "Show" button in 'Button' section
         driver.findElement(By.id("show_text")).click();
 //        check that text "I am here!" is seen
-        assertEquals("I'm here!", driver.findElement(By.id("show_me")).getText();
+        assertEquals("I am here!",
+                driver.findElement(By.id("show_me")).getText());
 //        refresh page
         driver.navigate().refresh();
 //        check that text "I am here!" is not seen
