@@ -51,19 +51,12 @@ public class Task2  {
         assertFalse(driver.findElement(By.xpath("//*[@id='fb_form']/form/div[4]/input[2]")).isSelected());
         assertTrue(driver.findElement(By.xpath("//*[@id='fb_form']/form/div[4]/input[3]")).isSelected());;
         assertEquals("Choose your option",driver.findElement(By.xpath("//*[@id='like_us']/option[1]")).getText());
-        assertEquals("",driver.findElement(By.xpath("//*[@id='fb_form']/form/div[6]/textarea")).isDisplayed());
-        assertEquals("Send",driver.findElement(By.className("w3-btn-block ")).isDisplayed());
+        assertEquals("",driver.findElement(By.xpath("//*[@id='fb_form']//textarea")).getText());
+        assertEquals("Send",driver.findElement(By.className("w3-btn-block ")).getText());
         assertEquals("rgba(33, 150, 243, 1)", driver.findElement(By.cssSelector(".w3-btn-block ")).getCssValue("background-color"));
         assertEquals("rgba(255, 255, 255, 1)", driver.findElement(By.cssSelector(".w3-btn-block")).getCssValue("color"));
 
 
-
-
-        /* (driver.findElement(By.xpath("//*[@id=\"lang_check\"]/input[1]")).isDisplayed();
-
-        assertEquals(driver.findElement(By.xpath("//*[@id=\"fb_form\"]/form/div[4]/input[1]")).isDisplayed();
-        assertEquals(driver.findElement(By.xpath("//*[@id=\"fb_form\"]/form/div[4]/input[2]")).isDisplayed()
-*/
 
     }
 
@@ -99,15 +92,15 @@ public class Task2  {
 //         (green with white letter and red with white letters)
  driver.findElement(By.id("fb_name")).sendKeys("Ivan");
  driver.findElement(By.id("fb_age")).sendKeys("25");
- driver.findElement((By.xpath("//*[@id='lang_check']/input[2]"))).isSelected();
- driver.findElement(By.xpath("//*[@id='fb_form']/form/div[4]/input[1]")).isSelected();
+ driver.findElement(By.xpath("//*[@id='lang_check']/input[2]")).click();
+ driver.findElement(By.xpath("//*[@id='fb_form']/form/div[4]/input[1]")).click();
          Select dropdown = new Select(driver.findElement(By.id("like_us")));
         dropdown.selectByIndex(1);
         driver.findElement(By.xpath("//*[@id='fb_form']//textarea")).sendKeys("Supercalifragilisticexpialidocious");
         driver.findElement(By.className("w3-btn-block ")).click();
         assertEquals("Ivan", driver.findElement(By.id("name")).getText());
         assertEquals("25", driver.findElement(By.id("age")).getText());
-        assertEquals("French", driver.findElement(By.id("language")).isSelected());
+        assertEquals("French", driver.findElement(By.id("language")).getText());
         assertEquals("male", driver.findElement(By.id("gender")).getText());
         assertEquals("Good", driver.findElement(By.id("option")).getText());
         assertEquals("Supercalifragilisticexpialidocious", driver.findElement(By.id("comment")).getText());
@@ -160,8 +153,8 @@ public class Task2  {
 //         check fields are filled correctly
         driver.findElement(By.id("fb_name")).sendKeys("Ivan");
         driver.findElement(By.id("fb_age")).sendKeys("25");
-        driver.findElement((By.xpath("//*[@id='lang_check']/input[2]"))).isSelected();
-        driver.findElement(By.xpath("//*[@id='fb_form']/form/div[4]/input[1]")).isSelected();
+        driver.findElement(By.xpath("//*[@id='lang_check']/input[2]")).click();
+        driver.findElement(By.xpath("//*[@id='fb_form']/form/div[4]/input[1]")).click();
         Select dropdown = new Select(driver.findElement(By.id("like_us")));
         dropdown.selectByIndex(1);
         driver.findElement(By.xpath("//*[@id='fb_form']//textarea")).sendKeys("Supercalifragilisticexpialidocious");
