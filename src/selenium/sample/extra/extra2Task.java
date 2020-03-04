@@ -64,5 +64,6 @@ public class extra2Task {
         driver.get("https://uljanovs.github.io/site/examples/po");
 //        check the background color of h1 element
         checks("rgba(0, 0, 0, 1)", "transparent");
+
     }
 }

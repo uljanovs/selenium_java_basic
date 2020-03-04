@@ -9,11 +9,22 @@ import org.openqa.selenium.chrome.ChromeDriver;
 //import pages.FormPage;
 //import pages.ListPage;
 
+import org.openqa.selenium.support.PageFactory;
+import selenium.pages.FormPage;
+import selenium.pages.ListPage;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+
 public class Task3Bonus {
     WebDriver driver;
-//	ListPage listPage = PageFactory.initElements(driver, ListPage.class);
-//     should contain what you see when you just open the page (the table with names/jobs)
-//	FormPage formPage = PageFactory.initElements(driver, FormPage.class);
+    //	ListPage listPage = PageFactory.initElements(driver, ListPage.class);
+    ListPage listPage = PageFactory.initElements(driver, ListPage.class);
+    //     should contain what you see when you just open the page (the table with names/jobs)
+
+    //	FormPage formPage = PageFactory.initElements(driver, FormPage.class);
+    FormPage formPage = PageFactory.initElements(driver, FormPage.class);
 //     should be what you see if you click "Add" or "Edit" (2 input field and a button (Add/Edit) and (Cancel)
 
 //    Bonus:
@@ -24,7 +35,9 @@ public class Task3Bonus {
         String libWithDriversLocation = System.getProperty("user.dir") + "\\lib\\";
         System.setProperty("webdriver.chrome.driver", libWithDriversLocation + "chromedriver.exe");
         driver = new ChromeDriver();
-        driver.get("https://uljanovs.github.io/sitetasks/list_of_people");
+        driver.get("https://uljanovs.github.io/site/tasks/list_of_people");
+        listPage = PageFactory.initElements(driver, listPage.class);
+        formPage = PageFactory.initElements(driver, formPage.class);
     }
 
     @After
@@ -41,8 +54,30 @@ public class Task3Bonus {
          * add a person via "Add person button"
          * check the list again, that non of the people where changes, but an additional one with correct name/job was added
          */
+        //Adding person - start
+        String ListSizeBefore = listPage.getPeopleListSize();
+        listPage.clickAddPersonButton();
+        //on Form Page
+        assertEquals("https://uljanovs.github.io/site/tasks/enter_a_new_person.html", driver.getCurrentUrl());
+        //Filling Form
+        formPage.clickNameField();
+        formPage.enterName();
+        formPage.clickSurnameField();
+        formPage.enterSurname();
+        formPage.clickJobField();
+        formPage.enterJob();
+        formPage.clickDateOfBirthField();
+        formPage.enterDateOfBirth();
+        formPage.chooseAllLanguages();
+        formPage.chooseMaleGender();
+        formPage.chooseInternStatus();
+        //Adding Person
+        formPage.addButtonClick();
+        //Back on list of People Page
+        assertEquals("https://uljanovs.github.io/site/tasks/list_of_people.html", driver.getCurrentUrl());
+        int ListSizeAfter = Integer.parseInt(listPage.getPeopleListSize())-1;
+        assertEquals(ListSizeBefore, ListSizeAfter);
     }
-
     @Test
     public void editPerson() {
         /* TODO:
@@ -52,6 +87,7 @@ public class Task3Bonus {
          * edit one of existing persons via the edit link
          * check the list again and that 2 people stayed the same and the one used was changed
          */
+
     }
 
     @Test
