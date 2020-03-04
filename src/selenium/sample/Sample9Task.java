@@ -39,14 +39,18 @@ public class Sample9Task {
         WebElement startGreen = driver.findElement(By.cssSelector("#start_green"));
         startGreen.click();
  //       TimeUnit.MILLISECONDS.sleep();
+        TimeUnit.MILLISECONDS.sleep(500);
+
 //         * 2) check that button does not appear,
         assertFalse(startGreen.isDisplayed());
 //         * but loading text is seen instead   "Loading green..."
+        assertFalse(startGreen.isDisplayed());
         WebElement loadingGreen = driver.findElement(By.cssSelector("#loading_green"));
         assertTrue(loadingGreen.isDisplayed());
 //         * 3) check that both button
 //         * and loading text is not seen,
  //       TimeUnit.MILLISECONDS.sleep(7 * );
+        TimeUnit.MILLISECONDS.sleep(7000);
         assertFalse(startGreen.isDisplayed());
         assertFalse(loadingGreen.isDisplayed());
 //         * success is seen instead "Green Loaded"
@@ -57,6 +61,7 @@ public class Sample9Task {
     @Test
     public void loadGreenImplicit() throws Exception {
 //        driver.manage().timeouts().implicitlyWait(, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 //         * 1) click on start loading green button
         WebElement startGreen = driver.findElement(By.cssSelector("#start_green"));
         startGreen.click();
@@ -78,13 +83,16 @@ public class Sample9Task {
     public void loadGreenExplicitWait() throws Exception {
      //   WebDriverWait wait = (WebDriverWait) new WebDriverWait(driver, )
      //           .ignoring(StaleElementReferenceException.class);
+        WebDriverWait wait = (WebDriverWait) new WebDriverWait(driver, 10).ignoring(StaleElementReferenceException.class);
 //         * 1) click on start loading green button
   //      wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#start_green")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#start_green")));
         WebElement startGreen = driver.findElement(By.cssSelector("#start_green"));
         startGreen.click();
 //         * 2) check that button does not appear,
 //         * but loading text is seen instead   "Loading green..."
 //        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#loading_green")));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#loading_green")));
         WebElement loadingGreen = driver.findElement(By.cssSelector("#loading_green"));
         assertTrue(loadingGreen.isDisplayed());
         assertFalse(startGreen.isDisplayed());
@@ -92,6 +100,7 @@ public class Sample9Task {
 //         * and loading text is not seen,
 //         * success is seen instead "Green Loaded"
 //        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#finish_green")));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#finish_green")));
         WebElement finishGreen = driver.findElement(By.cssSelector("#finish_green"));
         assertTrue(finishGreen.isDisplayed());
         assertFalse(startGreen.isDisplayed());
@@ -109,6 +118,39 @@ public class Sample9Task {
          * 		but loading text is seen instead for blue and success for green is seen
          * 5) check that both button and loading text is not seen, success is seen instead
          */
+        //0
+        WebDriverWait wait = (WebDriverWait) new WebDriverWait(driver, 10).ignoring(StaleElementReferenceException.class);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#start_green_and_blue")));
+        WebElement startGreenAndBlue = driver.findElement(By.cssSelector("#start_green_and_blue"));
+        //1
+        wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#start_green_and_blue")));
+        startGreenAndBlue.click();
+        //2
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#loading_green_without_blue")));
+        WebElement loadingGreenWithoutBlue = driver.findElement(By.cssSelector("#loading_green_without_blue"));
+        assertTrue(loadingGreenWithoutBlue.isDisplayed());
+        assertFalse(startGreenAndBlue.isDisplayed());
+
+        //3
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#loading_green_with_blue")));
+        assertFalse(startGreenAndBlue.isDisplayed());
+        WebElement loadingGreenWithBlue = driver.findElement(By.cssSelector("#loading_green_with_blue"));
+        assertTrue(loadingGreenWithBlue.isDisplayed());
+        //4
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#loading_blue_without_green")));
+        assertFalse(startGreenAndBlue.isDisplayed());
+        WebElement loadingBlueWithoutGreen = driver.findElement(By.cssSelector("#loading_blue_without_green"));
+        assertTrue(loadingBlueWithoutGreen.isDisplayed());
+
+        //5
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#finish_green_and_blue")));
+        assertFalse(startGreenAndBlue.isDisplayed());
+        assertFalse(loadingBlueWithoutGreen.isDisplayed());
+        assertFalse(loadingGreenWithBlue.isDisplayed());
+        assertFalse(loadingGreenWithoutBlue.isDisplayed());
+        WebElement LoadFinish = driver.findElement(By.cssSelector("#finish_green_and_blue"));
+        assertTrue(LoadFinish.isDisplayed());
+
     }
 
 }
