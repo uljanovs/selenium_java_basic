@@ -18,7 +18,7 @@ public class AgeSamplePage extends GenericSamplePage {
     private WebElement errorText;
 
     public void enterName(String name) {
-        nameInput.clear();
+
         nameInput.sendKeys(name);
     }
 
