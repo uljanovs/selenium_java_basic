@@ -7,7 +7,7 @@ import org.openqa.selenium.support.How;
 import static org.junit.Assert.*;
 //import static org.openqa.selenium.support.ui.Select.*;
 
-public class ProvideFeedbackPage extends BasePage {
+public class ProvideFeedbackPage /*extends BasePage*/ {
     //Name
     @FindBy(how = How.ID, using = "fb_name")
     private WebElement NameField;
@@ -73,12 +73,12 @@ public class ProvideFeedbackPage extends BasePage {
     private WebElement CommentFieldResult;
 
     //Yes Clicked
-    @FindBy(how = How.ID, using = "message")
+    @FindBy(how = How.CLASS_NAME, using = "w3-green")
     private WebElement MessageYesClicked;
 
     //Empty/Not selected Fields Check
     public void nameIsEmptyCheck() {
-        assertTrue(NameField.getText().equals(" "));
+        assertTrue(NameField.getText().equals(""));
 
     }
 
@@ -127,14 +127,13 @@ public class ProvideFeedbackPage extends BasePage {
   //      NameField.click();
         NameField.click();
         NameField.sendKeys("Julie");
-        assertEquals("Julie", NameField.getText());
+
 
     }
 
     public void AgeFieldFill() {
         AgeField.click();
         AgeField.sendKeys("56");
-        assertEquals("56", AgeField.getText());
 
     }
 
@@ -159,14 +158,13 @@ public class ProvideFeedbackPage extends BasePage {
     public void CommentFieldFill() {
         CommentField.click();
         CommentField.sendKeys(">:(");
-        assertTrue(CommentField.getText().equals(">:("));
     }
 
     //Buttons
     //Send
     public void sendButtonVisualCheck() {
-        assertTrue(SendButton.getAttribute("background-color").equals("rgba(33, 150, 243, 1"));
-        assertTrue(SendButton.getAttribute("color").equals("rgba(0, 0, 0, 1"));
+        assertTrue(SendButton.getCssValue("background-color").equals("rgba(33, 150, 243, 1)"));
+        assertTrue(SendButton.getCssValue("color").equals("rgba(255, 255, 255, 1)"));
     }
 
     public void sendButtonClick() {
@@ -175,8 +173,8 @@ public class ProvideFeedbackPage extends BasePage {
 
     //Yes
     public void YesButtonVisualCheck() {
-        assertTrue(YesButton.getAttribute("background-color").equals("rgba(76, 175, 80, 1)"));
-        assertTrue(YesButton.getAttribute("color").equals("rgba(0, 0, 0, 1"));
+        assertTrue(YesButton.getCssValue("background-color").equals("rgba(76, 175, 80, 1)"));
+        assertTrue(YesButton.getCssValue("color").equals("rgba(255, 255, 255, 1)"));
     }
 
     public void YesButtonClick() {
@@ -185,8 +183,8 @@ public class ProvideFeedbackPage extends BasePage {
 
     //No
     public void NoButtonVisualCheck() {
-        assertTrue(NoButton.getAttribute("background-color").equals("rgba(244, 67, 54, 1)"));
-        assertTrue(NoButton.getAttribute("color").equals("rgba(0, 0, 0, 1"));
+        assertTrue(NoButton.getCssValue("background-color").equals("rgba(244, 67, 54, 1)"));
+        assertTrue(NoButton.getCssValue("color").equals("rgba(255, 255, 255, 1)"));
     }
 
     public void NoButtonClick() {
@@ -195,27 +193,28 @@ public class ProvideFeedbackPage extends BasePage {
 
     //Empty fields request sent
     public void nameNull() {
-        assertTrue(NameFieldResult.equals(""));
+        System.out.println(NameFieldResult.getText());
+        assertTrue(NameFieldResult.getText().equals(""));
     }
 
     public void ageNull() {
-        assertTrue(AgeFieldResult.equals(""));
+        assertTrue(AgeFieldResult.getText().equals(""));
     }
 
     public void languageNull() {
-        assertTrue(LanguageFieldResult.equals(""));
+        assertTrue(LanguageFieldResult.getText().equals(""));
     }
 
     public void genderNull() {
-        assertTrue(GenderFieldResult.equals("null"));
+        assertTrue(GenderFieldResult.getText().equals("null"));
     }
 
     public void optionOfUsNull() {
-        assertTrue(OptionFieldResult.equals("null"));
+        assertTrue(OptionFieldResult.getText().equals("null"));
     }
 
     public void commentNull() {
-        assertTrue(CommentFieldResult.equals(""));
+        assertTrue(CommentFieldResult.getText().equals(""));
     }
 
     //Check fields after clicking Send Button
@@ -251,28 +250,8 @@ public class ProvideFeedbackPage extends BasePage {
         assertTrue(MessageYesClicked.getText().equals("Thank you for your feedback!"));
     }
     public void MessageYesClickedVisualCheck() {
-        assertTrue(MessageYesClicked.getAttribute("background-color").equals("rgba(76, 175, 80, 1)"));
-        assertTrue(MessageYesClicked.getAttribute("color").equals("rgba(0, 0, 0, 1)"));
-    }
-    //After clicking No Button
-    public void NameFieldRememberedCheck() {
-        assertEquals("Julie", NameField.getText());
-    }
-    public void AgeFieldRememberedCheck() {
-        assertEquals("56", AgeField.getText());
-    }
-    public void LanguageFieldRememberedCheck() {
-        assertTrue(FrenchCheckbox.isSelected());
-        assertTrue(EnglishCheckbox.isSelected());
-    }
-    public void GenderFieldRememberedCheck() {
-        assertTrue(FemaleRadiobutton.isSelected());
-    }
-    public void OptionFieldRememberedCheck() {
-        assertTrue(BadSelect.isSelected());
-    }
-    public void CommentFieldRememberedCheck() {
-        assertTrue(CommentField.getText().equals(">:("));
+        assertTrue(MessageYesClicked.getCssValue("background-color").equals("rgba(76, 175, 80, 1)"));
+        assertTrue(MessageYesClicked.getCssValue("color").equals("rgba(255, 255, 255, 1)"));
     }
 }
 
