@@ -17,9 +17,9 @@ public class Task2 {
     @Before
     public void openPage() {
         String libWithDriversLocation = System.getProperty("user.dir") + "\\lib\\";
-        System.setProperty("webdriver.chrome.driver", libWithDriversLocation + "chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/Applications/chromedriver");
         driver = new ChromeDriver();
-        driver.get("https://uljanovs.github.io/sitetasks/provide_feedback");
+        driver.get("https://uljanovs.github.io/site/tasks/provide_feedback");
         feedbackPage = PageFactory.initElements(driver, ProvideFeedbackPage.class);
     }
 
@@ -36,7 +36,6 @@ public class Task2 {
 //         "Choose your option" in "How do you like us?"
 //         check that the button send is blue with white letters
         feedbackPage.nameIsEmptyCheck();
-        /*
         feedbackPage.ageIsEmptyCheck();
         feedbackPage.EnglishNotSelected();
         feedbackPage.FrenchNotSelected();
@@ -142,14 +141,14 @@ public class Task2 {
         feedbackPage.sendButtonClick();
         feedbackPage.NoButtonClick();
         //Checking inputs
-        feedbackPage.NameFieldRememberedCheck();
-        feedbackPage.AgeFieldRememberedCheck();
-        feedbackPage.LanguageFieldRememberedCheck();
-        feedbackPage.GenderFieldRememberedCheck();
-        feedbackPage.OptionFieldRememberedCheck();
+        feedbackPage.sendButtonClick();
+        feedbackPage.NameFieldResultCheck();
+        feedbackPage.AgeFieldResultCheck();
+        feedbackPage.LanguageFieldResultCheck();
+        feedbackPage.GenderFieldResultCheck();
+        feedbackPage.OptionFieldResultCheck();
         feedbackPage.CommentFieldResultCheck();
-    }
 
-         */
     }
 }
+
