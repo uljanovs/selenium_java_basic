@@ -142,7 +142,12 @@ public class Task2  {
 //         click "Yes"
 //         check message text: "Thank you for your feedback!"
 //         color of text is white with green on the background
-        driver.findElement(By.xpath("//button[@type='submit']")).click();
+        driver.findElement(By.className("w3-btn-block ")).click();
+        driver.findElement(By.className("w3-green")).click();
+        assertEquals("Thank you for your feedback!", driver.findElement(By.id("message")).getText());
+        assertEquals("rgba(76, 175, 80, 1)", driver.findElement(By.className("w3-panel")).getCssValue("background-color"));
+        assertEquals("rgba(255, 255, 255, 1)", driver.findElement(By.id("message")).getCssValue("color"));
+
 
     }
 
