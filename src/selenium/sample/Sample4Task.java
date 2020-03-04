@@ -67,4 +67,6 @@ public class Sample4Task {
         // verify that current url is homepage
         assertTrue(driver.getCurrentUrl().equals("https://uljanovs.github.io/site/"));
     }
+
+
 }
