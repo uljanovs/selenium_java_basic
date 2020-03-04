@@ -3,6 +3,9 @@ package selenium.sample.extra;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -38,6 +41,10 @@ public class extra1Task {
 //        check that the url now "https://uljanovs.github.io/site/examples/po1"
 //        using driver navigation go back to "https://uljanovs.github.io/site/examples/po"
 //        check that the page now is "https://uljanovs.github.io/site/examples/po"
+        driver.get("https://uljanovs.github.io/site/examples/po");
+        driver.findElement(By.xpath("//a[@href='po1']")).click();
+        driver.navigate().back();
+        driver.getCurrentUrl();
     }
 
     @Test
@@ -48,6 +55,11 @@ public class extra1Task {
 //        using driver navigation go back to "https://uljanovs.github.io/site/examples/po"
 //        using driver navigation go forward to "https://uljanovs.github.io/site/examples/po1"
 //        check that the page now is "https://uljanovs.github.io/site/examples/po1"
+        driver.get("https://uljanovs.github.io/site/examples/po");
+        driver.findElement(By.xpath("//a[@href='po1']")).click();
+        driver.navigate().back();
+        driver.navigate().forward();
+        driver.getCurrentUrl();
     }
 
     @Test
@@ -58,5 +70,11 @@ public class extra1Task {
 //        check that text "I am here!" is seen
 //        refresh page
 //        check that text "I am here!" is not seen
+        driver.get("https://uljanovs.github.io/site/examples/act");
+        driver.findElement(By.id("show_text")).click();
+        assertTrue(driver.findElement(By.id("show_me")).isDisplayed());
+        driver.navigate().refresh();
+        assertFalse(driver.findElement(By.id("show_me")).isDisplayed());
     }
+
 }
