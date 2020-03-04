@@ -5,17 +5,21 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 //import pages.FormPage;
 //import pages.ListPage;
+import org.openqa.selenium.support.PageFactory;
+import selenium.pages.FormPage;
+import selenium.pages.ListPage;
 
 public class Task3Bonus {
-    WebDriver driver;
+    static WebDriver driver;
+    static FormPage formPage;
+    static ListPage listPage;
+
 //	ListPage listPage = PageFactory.initElements(driver, ListPage.class);
 //     should contain what you see when you just open the page (the table with names/jobs)
 //	FormPage formPage = PageFactory.initElements(driver, FormPage.class);
 //     should be what you see if you click "Add" or "Edit" (2 input field and a button (Add/Edit) and (Cancel)
-
 //    Bonus:
 //    try storing people via an Object/separate class
 
@@ -24,7 +28,9 @@ public class Task3Bonus {
         String libWithDriversLocation = System.getProperty("user.dir") + "\\lib\\";
         System.setProperty("webdriver.chrome.driver", libWithDriversLocation + "chromedriver.exe");
         driver = new ChromeDriver();
-        driver.get("https://uljanovs.github.io/sitetasks/list_of_people");
+        driver.get("https://uljanovs.github.io/site/tasks/list_of_people");
+        listPage = PageFactory.initElements(driver, ListPage.class);
+        formPage = PageFactory.initElements(driver, FormPage.class);
     }
 
     @After
@@ -41,6 +47,8 @@ public class Task3Bonus {
          * add a person via "Add person button"
          * check the list again, that non of the people where changes, but an additional one with correct name/job was added
          */
+
+
     }
 
     @Test

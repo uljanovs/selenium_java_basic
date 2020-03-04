@@ -3,18 +3,27 @@ package selenium.tasks;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.WebElement;
+
+import static org.junit.Assert.assertEquals;
 
 public class Task2 {
     WebDriver driver;
+
+    @FindBy(how = How.CLASS_NAME, using = "w3-btn-block")
+    private WebElement sendButton;
 
     @Before
     public void openPage() {
         String libWithDriversLocation = System.getProperty("user.dir") + "\\lib\\";
         System.setProperty("webdriver.chrome.driver", libWithDriversLocation + "chromedriver.exe");
         driver = new ChromeDriver();
-        driver.get("https://uljanovs.github.io/sitetasks/provide_feedback");
+        driver.get("https://uljanovs.github.io/site/tasks/provide_feedback");
     }
 
     @After
@@ -26,15 +35,31 @@ public class Task2 {
     public void initialFeedbackPage() throws Exception {
 //         TODO:
 //         check that all field are empty and no tick are clicked
+
 //         "Don't know" is selected in "Genre"
+        @FindBy(how = How.XPATH, using = "//*[@id=\"fb_form\"]/form/div[4]/input[3]")
+        private WebElement genderDisabled;
 //         "Choose your option" in "How do you like us?"
+
+        @FindBy(how = How.XPATH, using = "//*[@id=\"like_us\"]/option[1]")
+        private WebElement genderDisabled;
 //         check that the button send is blue with white letters
-    }
+
+        public void styleChecks() throws Exception {
+            assertEquals("rgba(33, 150, 243, 1)",
+                    driver.findElement(By.cssSelector(".w3-blue")).getCssValue("background-color"));
+        }
+        assertEquals("rgba(255, 255, 255, 1)",
+                driver.findElement(By.cssSelector(".w3-blue")).getCssValue("color"));
+        }
 
     @Test
     public void emptyFeedbackPage() throws Exception {
 //         TODO:
 //         click "Send" without entering any data
+
+        public void clickSend() { sendButton.click(); }
+
 //         check fields are empty or null
 //         check button colors
 //         (green with white letter and red with white letters)

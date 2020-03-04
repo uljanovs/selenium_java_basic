@@ -33,7 +33,7 @@ public class Task1 {
 //        TODO
         driver.findElement(By.id("numb")).sendKeys ("gtrgtrhgtbgte");
 //        enter a text instead of a number, check that correct error is seen
-        assertEquals("Please enter a number", driver.findElement(By.id("ch1_error")).getText());
+        assertEquals("Please enter a number", driver.findElement(By.xpath("//*[@id=\"ch1_error\"]")).getText());
     }
 
     @Test
@@ -41,7 +41,7 @@ public class Task1 {
 //        TODO
         driver.findElement(By.id("numb")).sendKeys("40");
 //        enter number which is too small (below 50), check that correct error is seen
-        assertEquals("Number is too small", driver.findElement(By.id("ch1_error")).getText());
+        assertEquals("Number is too small", driver.findElement(By.xpath("//*[@id=\"ch1_error\"]")).getText());
     }
 
     @Test
@@ -50,7 +50,7 @@ public class Task1 {
 //        BUG: if I enter number 666 no errors where seen
 //        TODO
         driver.findElement(By.id("numb")).sendKeys("10000");
-        assertEquals("Number is too big", driver.findElement(By.id("ch1_error")).getText());
+        assertEquals("Number is too small", driver.findElement(By.xpath("//*[@id=\"ch1_error\"]")).getText());
 //        enter number which is too big (above 100), check that correct error is seen
     }
 
