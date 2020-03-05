@@ -187,6 +187,7 @@ public class Task2 {
     @Test
     public void yesOnWithNameFeedbackPage() throws Exception {
 //         TODO:
+
 //         enter only name
 //         click "Send"
 //         click "Yes"
