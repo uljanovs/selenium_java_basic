@@ -175,7 +175,7 @@ public class Task2 {
 //         click "No"
             driver.findElement(By.xpath("//*[@id=\"fb_thx\"]/div/div[2]/button[2]")).click();
 
-//         check fields are filled correctly
+//         check fields are filled correctly...
 
 
     assertEquals("", driver.findElement(By.id("fb_name")).getText());
