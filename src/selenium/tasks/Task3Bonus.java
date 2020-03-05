@@ -18,6 +18,7 @@ public class Task3Bonus {
     static ListPage listPage;
 //	ListPage listPage = PageFactory.initElements(driver, ListPage.class);
 //     should contain what you see when you just open the page (the table with names/jobs)
+
 //	FormPage formPage = PageFactory.initElements(driver, FormPage.class);
 //     should be what you see if you click "Add" or "Edit" (2 input field and a button (Add/Edit) and (Cancel)
 //    Bonus:
