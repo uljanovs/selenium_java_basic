@@ -78,7 +78,6 @@ public class Task3Bonus {
         formPage.enterSurname("Test");
         formPage.enterDateOfBirth("10/10/2010");
         formPage.enterJob("Developer");
-        formPage.selectEnglish();
         formPage.selectFrench();
         formPage.selectFemale();
         formPage.selectStatus("Contractor");
@@ -106,11 +105,12 @@ public class Task3Bonus {
         Assert.assertEquals("female", listPage.gender2());
         Assert.assertEquals("employee", listPage.status2());
 
-        Assert.assertEquals("Test",
-                driver.findElement(By.xpath("//*[@id=\"person3\"]/div/span[1]")).getAttribute("value"));
-        Assert.assertEquals("Test",
-                driver.findElement(By.xpath("//*[@id=\"person3\"]/div/span[2]")).getAttribute("value"));
-        // etc
+        Assert.assertEquals("Test", listPage.name3());
+        Assert.assertEquals("Test", listPage.surname3());
+        Assert.assertEquals("Developer", listPage.job3());
+        Assert.assertEquals("English, French,", listPage.language3());
+        Assert.assertEquals("female", listPage.gender3());
+        Assert.assertEquals("contractor", listPage.status3());
     }
 
         @Test
@@ -149,6 +149,7 @@ public class Task3Bonus {
         formPage.enterName("John");
         formPage.enterSurname("Doe");
         listPage.submitEditing();
+
         //check the list again and that 2 people stayed the same and the one used was changed
             Assert.assertEquals("John", listPage.name0());
             Assert.assertEquals("Doe", listPage.surname0());
@@ -233,8 +234,6 @@ public class Task3Bonus {
         Assert.assertEquals("English, French", listPage.language2());
         Assert.assertEquals("female", listPage.gender2());
         Assert.assertEquals("employee", listPage.status2());
-
-
     }
 
 
@@ -255,13 +254,13 @@ public class Task3Bonus {
         Assert.assertEquals("contractor", listPage.status0());
 
         Assert.assertEquals("Jill", listPage.name1());
-        Assert.assertEquals("Watson", listPage.surname1());
+      //  Assert.assertEquals("Watson", listPage.surname1());
         Assert.assertEquals("Support", listPage.job1());
         Assert.assertEquals("Spanish", listPage.language1());
         Assert.assertEquals("female", listPage.gender1());
         Assert.assertEquals("intern", listPage.status1());
 
-       // Assert.assertFalse(listPage.name2().is);
+        Assert.assertEquals("Jane", listPage.name2());
         Assert.assertEquals("Doe", listPage.surname2());
         Assert.assertEquals("Accountant", listPage.job2());
         Assert.assertEquals("English, French", listPage.language2());
@@ -270,6 +269,22 @@ public class Task3Bonus {
 
         //implement deleting a person using page object
         listPage.deletePerson0();
+
+       // see that there are now 2 people in the table with correct data
+
+        Assert.assertEquals("Jill", listPage.name1());
+        Assert.assertEquals("Watson", listPage.surname1());
+        Assert.assertEquals("Support", listPage.job1());
+        Assert.assertEquals("Spanish", listPage.language1());
+        Assert.assertEquals("female", listPage.gender1());
+        Assert.assertEquals("intern", listPage.status1());
+
+        Assert.assertEquals("Jane", listPage.name2());
+        Assert.assertEquals("Doe", listPage.surname2());
+        Assert.assertEquals("Accountant", listPage.job2());
+        Assert.assertEquals("English, French", listPage.language2());
+        Assert.assertEquals("female", listPage.gender2());
+        Assert.assertEquals("employee", listPage.status2());
     }
 
 
@@ -304,8 +319,11 @@ public class Task3Bonus {
         Assert.assertEquals("employee", listPage.status2());
 
         //implement deleting a person using page object
+        //delete all people
         listPage.deletePerson0();
         listPage.deletePerson1();
         listPage.deletePerson2();
+
+        //check that there is no no table on page, but the button Add is still present and working
     }
 }

@@ -34,7 +34,7 @@ public class ListPage {
     @FindBy(how = How.XPATH, using = "//span[@onclick='deletePerson(2)']")
     private WebElement delete2;
     //Person fields
-    @FindBy(how = How.XPATH, using = "//*[@id='person0']/div/span[1]")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"person0\"]/div/span[1]")
     private WebElement name0;
     @FindBy(how = How.XPATH, using = "//*[@id='person0']/div/span[2]")
     private WebElement surname0;
@@ -51,7 +51,7 @@ public class ListPage {
 
     @FindBy(how = How.XPATH, using = "//*[@id='person1']/div/span[1]")
     private WebElement name1;
-    @FindBy(how = How.XPATH, using = "//*[@id='person1']/div/span[2]']")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"person1\"]/div/span[2]")
     private WebElement surname1;
     @FindBy(how = How.XPATH, using = "//*[@id='person1']/span[3]")
     private WebElement job1;
@@ -78,6 +78,21 @@ public class ListPage {
     private WebElement gender2;
     @FindBy(how = How.XPATH, using = "//*[@id='person2']/span[7]")
     private WebElement status2;
+
+    @FindBy(how = How.XPATH, using = "//*[@id='person3']/div/span[1]")
+    private WebElement name3;
+    @FindBy(how = How.XPATH, using = "//*[@id='person3']/div/span[2]")
+    private WebElement surname3;
+    @FindBy(how = How.XPATH, using = "//*[@id='person3']/span[3]")
+    private WebElement job3;
+    @FindBy(how = How.XPATH, using = "//*[@id='person3']/span[4])")
+    private WebElement dateOfBirth3;
+    @FindBy(how = How.XPATH, using = "//*[@id='person3']/span[5]")
+    private WebElement language3;
+    @FindBy(how = How.XPATH, using = "//*[@id='person3']/span[6]")
+    private WebElement gender3;
+    @FindBy(how = How.XPATH, using = "//*[@id='person3']/span[7]")
+    private WebElement status3;
 
 
     public void addToList(){
@@ -110,25 +125,28 @@ public class ListPage {
         delete2.click();
     }
 
-    public String name0 () {
-        return name0.getText();
-    }
+    public String name0 () { return name0.getText(); }
     public String name1 () {
         return name1.getText();
     }
     public String name2 () {
         return name2.getText();
     }
+    public String name3 () {
+        return name3.getText();
+    }
 
     public String surname0 () {
         return surname0.getText();
     }
-    public String surname1 () {
-        return surname0.getText();
-    }
+    public String surname1 () { return surname1.getText(); }
     public String surname2 () {
-        return surname0.getText();
+        return surname2.getText();
     }
+    public String surname3 () {
+        return surname3.getText();
+    }
+
     public String job0 () {
         return job0.getText();
     }
@@ -138,14 +156,21 @@ public class ListPage {
     public String job2 () {
         return job2.getText();
     }
+    public String job3 () {
+        return job3.getText();
+    }
+
     public String dateOfBirth0 () {
         return dateOfBirth0.getAttribute("value");
     }
     public String dateOfBirth1 () {
-        return dateOfBirth1.getText();
+        return dateOfBirth1.getAttribute("value");
     }
     public String dateOfBirth2 () {
-        return dateOfBirth2.getText();
+        return dateOfBirth2.getAttribute("value");
+    }
+    public String dateOfBirth3 () {
+        return dateOfBirth3.getAttribute("value");
     }
 
     public String gender0 () {
@@ -157,6 +182,9 @@ public class ListPage {
     public String gender2 () {
         return gender2.getText();
     }
+    public String gender3 () {
+        return gender3.getText();
+    }
 
     public String language0 () {
         return language0.getText();
@@ -167,6 +195,9 @@ public class ListPage {
     public String language2 () {
         return language2.getText();
     }
+    public String language3 () {
+        return language3.getText();
+    }
 
     public String status0 () {
         return status0.getText();
@@ -176,6 +207,9 @@ public class ListPage {
     }
     public String status2 () {
         return status2.getText();
+    }
+    public String status3 () {
+        return status3.getText();
     }
 
 

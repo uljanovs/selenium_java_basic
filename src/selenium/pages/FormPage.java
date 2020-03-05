@@ -11,7 +11,7 @@ public class FormPage {
     private WebElement clearAllFields;
     @FindBy(how = How.XPATH, using = "//button[@onclick='addPersonToList()']")
     private WebElement addBtn;
-    @FindBy(how = How.XPATH, using = "///button[@onclick='window.history.back()']")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"modal_button\"][2]")
     private WebElement cancel;
     //fields
     @FindBy(how = How.ID, using = "name")
@@ -93,6 +93,10 @@ public class FormPage {
 
    public void cancel(){
         cancel.click();
+   }
+
+   public void nameIsPresent(){
+        nameField.isDisplayed();
    }
 
 
