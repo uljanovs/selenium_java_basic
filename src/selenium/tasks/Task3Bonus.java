@@ -21,6 +21,7 @@ public class Task3Bonus {
 
 //	FormPage formPage = PageFactory.initElements(driver, FormPage.class);
 //     should be what you see if you click "Add" or "Edit" (2 input field and a button (Add/Edit) and (Cancel)
+
 //    Bonus:
 //    try storing people via an Object/separate class
 
