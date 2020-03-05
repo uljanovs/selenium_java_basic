@@ -17,7 +17,7 @@ public class Task2 {
     @Before
     public void openPage() {
         String libWithDriversLocation = System.getProperty("user.dir") + "\\lib\\";
-        System.setProperty("webdriver.chrome.driver", "/Applications/chromedriver");
+        System.setProperty("webdriver.chrome.driver", libWithDriversLocation + "chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("https://uljanovs.github.io/site/tasks/provide_feedback");
         feedbackPage = PageFactory.initElements(driver, ProvideFeedbackPage.class);
