@@ -8,9 +8,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 //import pages.FormPage;
 //import pages.ListPage;
+import org.openqa.selenium.support.PageFactory;
+import selenium.pages.FormPage;
+import selenium.pages.ListPage;
 
 public class Task3Bonus {
-    WebDriver driver;
+    static WebDriver driver;
+    static FormPage formPage;
+    static ListPage listPage;
 //	ListPage listPage = PageFactory.initElements(driver, ListPage.class);
 //     should contain what you see when you just open the page (the table with names/jobs)
 //	FormPage formPage = PageFactory.initElements(driver, FormPage.class);
@@ -24,7 +29,9 @@ public class Task3Bonus {
         String libWithDriversLocation = System.getProperty("user.dir") + "\\lib\\";
         System.setProperty("webdriver.chrome.driver", libWithDriversLocation + "chromedriver.exe");
         driver = new ChromeDriver();
-        driver.get("https://uljanovs.github.io/sitetasks/list_of_people");
+        driver.get("https://uljanovs.github.io/site/tasks/list_of_people");
+        listPage = PageFactory.initElements(driver, ListPage.class);
+        formPage = PageFactory.initElements(driver, FormPage.class);
     }
 
     @After
