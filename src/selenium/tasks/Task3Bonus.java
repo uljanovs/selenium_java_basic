@@ -36,7 +36,7 @@ public class Task3Bonus {
         String libWithDriversLocation = System.getProperty("user.dir") + "\\lib\\";
         System.setProperty("webdriver.chrome.driver", libWithDriversLocation + "chromedriver.exe");
         driver = new ChromeDriver();
-        driver.get("https://kristinek.github.io/site/tasks/list_of_people");
+        driver.get("https://uljanovs.github.io/site/tasks/list_of_people");
         listPage = PageFactory.initElements(driver, ListPage.class);
         formPage = PageFactory.initElements(driver, FormPage.class);
     }
@@ -172,6 +172,6 @@ public class Task3Bonus {
         listPage.checkTableNotDisplayed();
         listPage.checkAddPersonBtnIsDisplayed();
         listPage.clickAddPersonBtn();
-        assertEquals("https://kristinek.github.io/site/tasks/enter_a_new_person.html", driver.getCurrentUrl());
+        assertEquals("https://uljanovs.github.io/site/tasks/enter_a_new_person.html", driver.getCurrentUrl());
     }
 }
