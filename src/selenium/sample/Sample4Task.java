@@ -5,14 +5,13 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import static org.junit.Assert.*;
 
 public class Sample4Task {
-    WebDriver driver;
-    String base_url = "https://uljanovs.github.io/site/examples/actions";
+    private WebDriver driver;
+    private String base_url = "https://kristinek.github.io/site/examples/actions";
 
     // method which is being run before each test
     @Before
@@ -34,48 +33,38 @@ public class Sample4Task {
 
     @Test
     public void enterNumber() throws Exception {
-//  enter a number under "Number"
-        //  driver.findElement(By.id("number"))....("123");
-        driver.findElement(By.id("number")).sendKeys("123");
+//        enter a number under "Number"
+        int number = 13;
+        driver.findElement(By.id("number")).clear();
+        driver.findElement(By.id("number")).sendKeys(Integer.toString(number));
 //        check that button is not clickable "Clear Result"
-        // assertFalse(driver.findElement(By.id("clear_result_button_number"))....());
         assertFalse(driver.findElement(By.id("clear_result_button_number")).isEnabled());
 //        check that text is not displayed
-        //  assertFalse(driver.findElement(By.id("result_number"))....());
         assertFalse(driver.findElement(By.id("result_number")).isDisplayed());
 //        click on "Result" button
-        //driver.findElement(By.id("result_button_number")).....();
         driver.findElement(By.id("result_button_number")).click();
 //        check that text is displayed
-        //assertTrue(driver.findElement(By.id("result_number")).....());
         assertTrue(driver.findElement(By.id("result_number")).isDisplayed());
 //        check that the correct Text appears ("You entered number: "NUMBER YOU ENTERED"")
-        //assertEquals("You entered number: \"1235\"", driver.findElement(By.id("result_number"))....());
-        assertEquals("You entered number: \"1235\"", driver.findElement(By.id("result_number")).getText());
+        assertEquals("You entered number: \"" + number + "\"", driver.findElement(By.id("result_number")).getText());
 //        check that the button "Clear Result" is clickable now
-        //assertTrue(driver.findElement(By.id("clear_result_button_number"))....());
         assertTrue(driver.findElement(By.id("clear_result_button_number")).isEnabled());
 //        click on "Clear Result"
-        //driver.findElement(By.id("clear_result_button_number")).....();
         driver.findElement(By.id("clear_result_button_number")).click();
 //        check that the text is still (""), but it is not displayed
-        //      assertEquals("", driver.findElement(By.id("result_number"))....());
-        //      assertFalse(driver.findElement(By.id("result_number"))....());
         assertEquals("", driver.findElement(By.id("result_number")).getText());
         assertFalse(driver.findElement(By.id("result_number")).isDisplayed());
     }
 
     @Test
     public void clickOnLink() throws Exception {
-        //driver.get("https://uljanovs.github.io/site/");
 //        check current url is base_url
         assertEquals(base_url, driver.getCurrentUrl());
 //        click on "This is a link to Homepage"
-        driver.findElement(By.id("homepage_link")).click();
+        driver.findElement(By.linkText("This is a link to Homepage")).click();
 //        check that current url is not base_url
-
-        assertFalse(base_url.equals(driver.getCurrentUrl()));
-//        verify that current url is homepage //getCurrentUrl()
-        assertTrue(driver.getCurrentUrl().equals("https://uljanovs.github.io/site/"));
+        assertNotEquals(base_url, driver.getCurrentUrl());
+//        verify that current url is homepage
+        assertEquals("https://kristinek.github.io/site/", driver.getCurrentUrl());
     }
 }

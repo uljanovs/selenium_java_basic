@@ -10,10 +10,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.List;
 
+import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.*;
 
 public class Sample3Task {
-    WebDriver driver;
+    private WebDriver driver;
 
     // method which is being run before each test
     @Before
@@ -25,7 +26,7 @@ public class Sample3Task {
         driver = new ChromeDriver();
 
         //open page:
-        driver.get("https://uljanovs.github.io/site/examples/locators");
+        driver.get("https://kristinek.github.io/site/examples/locators");
     }
 
     // method which is being run after each test
@@ -36,33 +37,34 @@ public class Sample3Task {
 
     @Test
     public void assertEqualsTask() throws Exception {
-//        check how many element with class "test" there are on page (5)
+//         check how many element with class "test" there are on page (5)
         assertEquals(5, driver.findElements(By.className("test")).size());
 //         check that value of second button is "This is also a button"
-        assertEquals("This is also a button", driver.findElement(By.id("buttonId")).getAttribute("value"));
+        assertEquals("This is also a button", driver.findElement(By.name("randomButton2")).getAttribute("value"));
     }
 
     @Test
     public void assertTrueTask() throws Exception {
 //         check that it is True that value of second button is
 //         "this is Also a Button" if you ignore Caps Locks
+        assertTrue(driver.findElement(By.name("randomButton2")).getAttribute("value").equalsIgnoreCase("this is Also a Button"));
 //         fail with custom error message:
-        assertTrue("Custom message", driver.findElement(By.name("randomButton2")).getAttribute("value").equalsIgnoreCase("this is Also a Button"));
+        fail("Custom message");
     }
 
     @Test
     public void assertFalseTask() throws Exception {
-//       check that it is False that value of second button is "This is a button"
+//        check that it is False that value of second button is "This is a button"
         assertFalse(driver.findElement(By.name("randomButton2")).getAttribute("value").equals("This is a button"));
     }
 
     @Test
     public void failTask() throws Exception {
-//       check that none of items with class "test"
-        List<WebElement> elements = driver.findElements(By.className("test"));
+//        check that none of items with class "test"
 //        contain number 190
-        for (WebElement element : elements) {
-            assertFalse(element.getText().contains("190"));
+        List<WebElement> classTestElements = driver.findElements(By.className("test"));
+        for (WebElement testElement: classTestElements) {
+            assertFalse(testElement.getText().contains("190"));
         }
     }
 }

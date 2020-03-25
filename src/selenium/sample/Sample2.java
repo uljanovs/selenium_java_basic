@@ -23,7 +23,7 @@ public class Sample2 {
         driver = new ChromeDriver();
 
         //open page:
-        driver.get("https://uljanovs.github.io/site/examples/locators");
+        driver.get("https://kristinek.github.io/site/examples/locators");
     }
 
     // method which is being run after each test

@@ -5,13 +5,12 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import static org.junit.Assert.assertEquals;
 
 public class Sample8Task {
-    WebDriver driver;
+    private WebDriver driver;
 
     // method which is being run before each test
     @Before
@@ -23,7 +22,7 @@ public class Sample8Task {
         driver = new ChromeDriver();
 
         //open page:
-        driver.get("https://uljanovs.github.io/site/examples/po");
+        driver.get("https://kristinek.github.io/site/examples/po");
     }
 
     // method which is being run after each test
@@ -35,19 +34,10 @@ public class Sample8Task {
     @Test
     public void styleChecks() throws Exception {
 //        check the background of top 2 sections
-        assertEquals("rgba(255, 221, 221, 1)",
-                driver.findElement(By.cssSelector(".w3-pale-red")).getCssValue("background-color"));
-        assertEquals("rgba(255, 255, 204, 1)",
-                driver.findElement(By.cssSelector(".w3-pale-yellow")).getCssValue("background-color"));
+//        rgba(255, 221, 221, 1);
+        assertEquals("rgba(255, 221, 221, 1)", driver.findElement(By.cssSelector(".w3-pale-red")).getCssValue("background-color"));
+        assertEquals("rgba(255, 255, 204, 1)", driver.findElement(By.cssSelector(".w3-pale-yellow")).getCssValue("background-color"));
 //        check h1 element font-size 64px
-        assertEquals("64px",
-                driver.findElement(By.cssSelector("h1")).getCssValue("font-size"));
-        //check the background of "blue" sections
-        assertEquals("rgba(221, 255, 255, 1)",
-                driver.findElement(By.cssSelector(".w3-pale-blue")).getCssValue("background-color"));
-        //        check "blue box" element font-size 64px
-        assertEquals("15px",
-                driver.findElement(By.cssSelector(".w3-pale-blue")).getCssValue("font-size"));
-
+        assertEquals("64px", driver.findElement(By.cssSelector("h1")).getCssValue("font-size"));
     }
 }
